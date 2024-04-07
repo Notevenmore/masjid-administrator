@@ -1,0 +1,489 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/*-----------------NAVBAR SECTION------------------------*/
+
+#separator {
+    width: 1px;
+    height: 43px;
+    background: #e5e7eb;
+}
+
+#navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+    margin: 0 auto;
+}
+
+#navbar .logo {
+    padding: 2em;
+}
+
+#navbar .logo img {
+    width: 60%;
+}
+
+#navbar .button {
+    display: flex;
+    align-items: center;
+    padding: 2em;
+}
+
+#login-btn {
+    cursor: pointer;
+    background-color: #ffb356;
+    font-size: 20px;
+    padding: 8px 39px 8px;
+    border: 1px solid #ffb356;
+    color: #ffff;
+    border-radius: 5px;
+    transition: 0.4s;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+        rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+#hero {
+    background-image: linear-gradient(#05934a8f, #05934a8f);
+    /* url(../img/bg-landing.png); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#hero .hero-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 auto;
+    margin-bottom: 5em;
+    height: 550px;
+    left: 95px;
+    top: 135px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
+        0px 2px 4px -2px rgba(0, 0, 0, 0.05);
+}
+
+#hero .hero-box .text-section {
+    margin-top: 5em;
+}
+
+#hero .hero-box .text-section .upper-text h4 {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 150%;
+    /* or 60px */
+    color: #ffffff;
+    text-align: center;
+}
+
+#hero .hero-box .text-section .lower-text h4 {
+    margin-top: 1em;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 150%;
+    /* or 30px */
+    color: #ffffff;
+    text-align: center;
+}
+
+#hero .hero-box .image-section {
+    display: flex;
+}
+
+#hero .hero-box .image-section img {
+    width: 460px;
+    align-self: flex-end;
+}
+
+/*-----------------REPORT INFO SECTION------------------------*/
+
+#report-info {
+    width: 90%;
+    margin: 0 auto;
+}
+
+#report-info .more-report-link {
+    width: 95%;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 2em;
+}
+
+#report-info .more-report-link a {
+    color: #ffb356;
+    font-weight: bolder;
+    text-decoration: underline;
+    margin-right: 5px;
+}
+
+#report-info .report-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#report-info .report-content .pemasukkan {
+    display: flex;
+    flex-direction: column;
+    width: 604px;
+    height: 443px;
+    padding: 24px;
+    border-radius: 8px;
+    border: 1px solid var(--gray-200, #e5e7eb);
+    background: var(--white, #fff);
+
+    /* shadow-md */
+    box-shadow: 0px 2px 4px -2px rgba(0, 0, 0, 0.05),
+        0px 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+#report-info .report-content .pemasukkan .heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#report-info .report-content .pemasukkan .heading .text-part h3 {
+    color: #111928;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%; /* 36px */
+}
+
+#report-info .report-content .pemasukkan .heading .input-part form {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+#report-info .report-content .perbandingan {
+    width: 604px;
+    height: 353px;
+    padding: 24px;
+    border-radius: 8px;
+    border: 1px solid var(--gray-200, #e5e7eb);
+    background: var(--white, #fff);
+
+    /* shadow-md */
+    box-shadow: 0px 2px 4px -2px rgba(0, 0, 0, 0.05),
+        0px 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+#report-info .report-content .perbandingan .heading .text-part h3 {
+    color: #111928;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%; /* 36px */
+}
+
+#report-info .report-content .perbandingan .heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#report-info .report-content .perbandingan .heading .input-part form {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+/*-----------------LIHAT LAPORAN LANDING PAGE SECTION------------------------*/
+#laporan-info {
+    margin-top: 4em;
+}
+
+#laporan-info .head-info-laporan {
+    width: 91%;
+    margin: 0 auto;
+}
+
+#laporan-info .head-info-laporan h1 {
+    color: #1f2a37;
+    font-family: Inter;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%; /* 60px */
+}
+
+#laporan-info .laporan-content {
+    width: 91%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/*-----------------PRAYING INFO SECTION------------------------*/
+
+#praying-info {
+    width: 90%;
+    margin: 0 auto;
+    background: #ffffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
+        0px 2px 4px -2px rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 5em 1em 5em;
+}
+
+#praying-info .text-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+#praying-info .text-section h3 {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 70px;
+    line-height: 150%;
+    /* identical to box height, or 60px */
+    color: #000000;
+}
+
+#praying-info .text-section h4 {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 150%;
+    /* or 30px */
+    color: #000000;
+}
+
+#praying-info .table-praying img {
+    width: 391px;
+    height: 326px;
+    left: 780px;
+    top: 136px;
+}
+
+/*-----------------MORE INFO SECTION------------------------*/
+
+#more-info {
+    margin-top: 4em;
+}
+
+#more-info .head-info h1 {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 70px;
+    line-height: 150%;
+    /* identical to box height, or 60px */
+    color: #000000;
+}
+
+#more-info .see-more-link {
+    width: 95%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#more-info .see-more-link a {
+    color: #ffb356;
+    font-weight: bolder;
+    text-decoration: underline;
+    margin-right: 5px;
+}
+
+/*-----------------CARD SECTION------------------------*/
+
+#more-info .card-section {
+    margin-top: 2em;
+    display: flex;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+#more-info .card-section .card {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-bottom: 3em;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+#more-info .card-section .card .image-card img {
+    width: 450px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+#more-info .card-section .card .title-card h2 {
+    font-weight: bold;
+    font-size: 32px;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    margin-top: 0.4em;
+}
+
+#more-info .card-section .card .text-card p {
+    color: #6b7280;
+    font-size: 20px;
+    margin-left: 0.7em;
+    margin-right: 0.7em;
+    text-align: justify;
+    margin-top: 0.8em;
+    width: 400px;
+    word-wrap: break-word;
+}
+
+#more-info .card-section .card .button-card a button {
+    width: 150px;
+    margin-left: 1em;
+    margin-top: 0.8em;
+    background-color: #ffb356;
+    font-size: 18px;
+    color: #ffffff;
+    border: 1px solid #ffb356;
+    border-radius: 5px;
+    padding: 8px;
+    margin-bottom: 1em;
+}
+
+/*-------------------Untuk Detail Kegiatan------------------*/
+
+#more-info .head-info-kegiatan {
+    width: 91%;
+    margin: 0 auto;
+}
+
+#more-info .head-info-kegiatan h1 {
+    color: #1f2a37;
+    font-family: Inter;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%; /* 60px */
+}
+
+#more-info .head-info-2 {
+    width: 91%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+
+#more-info .head-info-2 .date {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+#more-info .head-info-2 .date p {
+    color: #000;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%; /* 24px */
+}
+
+#more-info .head-info-2 .person {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+#more-info .head-info-2 .person p {
+    color: #000;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%; /* 24px */
+}
+
+#more-info .kegiatan-content {
+    width: 91%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+}
+
+#more-info .kegiatan-content .text-section {
+    width: 50%;
+}
+
+#more-info .kegiatan-content .image-section {
+    width: 50%;
+}
+
+#more-info .kegiatan-content .text-section p {
+    color: #000;
+    text-align: justify;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%; /* 30px */
+}
+
+/*-----------------FOOTER SECTION------------------------*/
+
+#footer {
+    background-color: #f9fafb;
+    padding: 5px;
+    margin-top: 100px;
+}
+
+#footer .title {
+    display: flex;
+    justify-content: center;
+}
+
+#footer .title h1 {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+#footer .content .text-content {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+#footer .break-line {
+    width: 90%;
+    margin: auto;
+}
+
+#footer .additional-info {
+    margin-top: 1em;
+    display: flex;
+    justify-content: center;
+}
+
+.back-btn {
+    width: 91%;
+    margin: 0 auto;
+}
+
+.back-btn a {
+    display: inline-flex;
+    align-items: center;
+    gap: 27px;
+}

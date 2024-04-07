@@ -1,0 +1,212 @@
+#report-section {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: space-between;
+    margin-bottom: 2em;
+}
+
+#report-section .report-card {
+    display: flex;
+    width: 350px;
+    height: 158px;
+    padding: 24px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-radius: 8px;
+    border: 1px solid var(--gray-200, #e5e7eb);
+    background: var(--white, #fff);
+
+    /* shadow-md */
+    box-shadow: 0px 2px 4px -2px rgba(0, 0, 0, 0.05),
+        0px 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+#report-section .report-card .title h1 {
+    color: var(--gray-900, #111928);
+    font-family: "Inter";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 155%; /* 20px */
+}
+
+#income {
+    color: #05934a;
+    font-family: Inter;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 42px */
+}
+
+#outcome {
+    color: #e02424;
+    font-family: Inter;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 42px */
+}
+
+#balance {
+    color: #e3a008;
+    font-family: Inter;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 42px */
+}
+
+#report-info .report-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 2em;
+}
+
+#report-info .report-content .pemasukkan {
+    display: flex;
+    flex-direction: column;
+    width: 604px;
+    height: 353px;
+    padding: 24px;
+    border-radius: 8px;
+    border: 1px solid var(--gray-200, #e5e7eb);
+    background: var(--white, #fff);
+
+    /* shadow-md */
+    box-shadow: 0px 2px 4px -2px rgba(0, 0, 0, 0.05),
+        0px 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+#report-info .report-content .pemasukkan .heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#report-info .report-content .pemasukkan .heading .text-part h3 {
+    color: #111928;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%; /* 36px */
+}
+
+#report-info .report-content .pemasukkan .heading .input-part form {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+#report-info .report-content .perbandingan {
+    width: 604px;
+    height: 353px;
+    padding: 24px;
+    border-radius: 8px;
+    border: 1px solid var(--gray-200, #e5e7eb);
+    background: var(--white, #fff);
+
+    /* shadow-md */
+    box-shadow: 0px 2px 4px -2px rgba(0, 0, 0, 0.05),
+        0px 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+#report-info .report-content .perbandingan .heading .text-part h3 {
+    color: #111928;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%; /* 36px */
+}
+
+#report-info .report-content .perbandingan .heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#report-info .report-content .perbandingan .heading .input-part form {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+#form-part {
+    display: flex;
+    flex-direction: row;
+    gap: 3em;
+}
+
+#form-part .left-part {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+#form-part .right-part {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.top-btn {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.action-btn {
+    color: var(--gray-500, #6b7280);
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    margin: 5px;
+    text-decoration-line: underline;
+}
+
+.btn {
+    cursor: pointer;
+}
+
+.bg-success {
+    background-color: rgba(40, 167, 69, 0.4);
+    color: black;
+    font-size: 14px;
+    border: 1px solid rgba(40, 167, 69, 1);
+    padding: 10px;
+}
+
+.save-btn {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 3em;
+    align-items: center;
+    gap: 5em;
+}
+
+.save-btn input {
+    width: 200px;
+}
+
+.mini-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-top: 2em;
+}
+
+.mini-nav .nav-part {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}

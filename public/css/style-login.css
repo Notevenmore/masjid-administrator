@@ -1,0 +1,101 @@
+* {
+    font-family: "Quicksand", sans-serif;
+}
+
+#bg-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #fff;
+    flex-direction: column;
+}
+
+#bg-login .login-container {
+    width: 400px;
+    min-height: 200px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+#bg-login .logo img {
+    width: 300px;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+.form-group {
+    min-width: 100%;
+    max-width: 100%;
+}
+
+.form-group input,
+.form-group select {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-top: 10px;
+}
+
+p {
+    font-size: 11px;
+    margin-bottom: 30px;
+    align-self: start;
+}
+
+p.login-failed {
+    color: red;
+    margin-bottom: 10px;
+}
+
+p.register-success {
+    color: green;
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group .text-input {
+    display: flex;
+    align-items: center;
+}
+
+button,
+.btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #ffb356;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button:hover,
+.btn:hover {
+    background-color: #d88a2b;
+}
+
+.d-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
