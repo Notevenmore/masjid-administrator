@@ -15,13 +15,22 @@
               Export Excel
         </button>
         <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" type="button" class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 
-          focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 
+          focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5
           text-center inline-flex items-center dark:bg-green-600 dark:hover:bg-green-700 
           dark:focus:ring-blue-800">
             <svg class="w-3 h-3 mr-1 text-white-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16" />
             </svg>
           Tambah {{ $title }}
+        </button>
+        <button data-modal-target="category-modal" data-modal-toggle="category-modal" type="button" class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 
+          focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 
+          text-center inline-flex items-center dark:bg-green-600 dark:hover:bg-green-700 
+          dark:focus:ring-blue-800" style="margin-left: 8px;">
+            <svg class="w-3 h-3 mr-1 text-white-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16" />
+            </svg>
+          Tambah Kategori {{ $title }}
         </button>
       </div>
       @if(Request::session()->has('success'))
@@ -67,18 +76,23 @@
                     @if(Request::routeIs('dashboard.pemasukan'))
                       <label for="dana" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Sumber Dana</label>
                       <select id="dana" name="sumber_dana" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                        <option selected>Pilih Dana</option>
-                        <option value="Infaq">Infaq</option>
-                        <option value="Sodaqqoh">Sodaqqoh</option>
-                        <option value="Zakat">Zakat</option>
+                        <option selected disabled>Pilih Dana</option>
                         <option value="Uang Kas">Uang Kas</option>
+                        @foreach(Auth::user()->jamaah->masjid->categorypemasukan as $categorypemasukan)
+                          <option value="{{ $categorypemasukan->nama }}">{{ $categorypemasukan->nama }}</option>
+                        @endforeach
                       </select>
                       @if($errors->has('sumber_dana'))
                         <p style="font-size: 11px;color: red;margin-bottom: 10px;">{{ $errors->first('sumber_dana') }}</p>
                       @endif
                     @elseif(Request::routeIs('dashboard.pengeluaran'))
                       <label for="detail" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Detail Transaksi</label>
-                      <input type="detail" name="keterangan" id="detail" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Masukkan keterangan transaksi">
+                      <select name="keterangan" id="detail" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <option selected disabled>Pilih Keterangan pengeluaran</option>
+                        @foreach(Auth::user()->jamaah->masjid->categorypengeluaran as $categorypengeluaran)
+                          <option value="{{ $categorypengeluaran->nama }}">{{ $categorypengeluaran->nama }}</option>
+                        @endforeach
+                      </select>
                       @if($errors->has('keterangan'))
                         <p style="font-size: 11px;color: red;margin-bottom: 10px;">{{ $errors->first('keterangan') }}</p>
                       @endif
@@ -151,6 +165,40 @@
           </div>
         </div>
       </div>
+      <div id="category-modal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+        <div class="relative w-full max-w-md max-h-full">
+          <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+            <button type="button" class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="authentication-modal">
+              <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+              </svg>
+              <span class="sr-only">Close modal</span>
+            </button>
+            <div class="px-6 py-6 lg:px-8">
+              <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Tambah Kategori {{ $title }}</h3>
+                <form class="space-y-6" action="{{ $kategori_store }}" method="POST" enctype="multipart/form-data">
+                  @csrf
+                  <div>
+                    @if(Request::routeIs('dashboard.pemasukan'))
+                      <label for="choose-category" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Kategori Pemasukan: </label>
+                      <input type="text" name="categoryname" id="choose-category" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Masukkan Kategori pemasukan baru">
+                      @if($errors->has('categoryname'))
+                        <p style="font-size: 11px;color: red;margin-bottom: 10px;">{{ $errors->first('categoryname') }}</p>
+                      @endif
+                    @elseif(Request::routeIs('dashboard.pengeluaran'))
+                      <label for="choose-category" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Kategori Pengeluaran: </label>
+                      <input type="text" name="categoryname" id="choose-category" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Masukkan Kategori pengeluaran baru">
+                      @if($errors->has('categoryname'))
+                        <p style="font-size: 11px;color: red;margin-bottom: 10px;">{{ $errors->first('categoryname') }}</p>
+                      @endif
+                    @endif
+                  </div>
+                  <input type="submit" class="w-full text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
       <br><br>
     </div>
   </div>

@@ -45,6 +45,8 @@ Route::delete('usermaster/{user}', [\App\Http\Controllers\UserController::class,
 Route::resource('user', \App\Http\Controllers\UserController::class)->middleware(['auth','isAdmin','isRoleAdmin']);
 Route::resource('pemasukan', \App\Http\Controllers\PemasukanController::class)->middleware('auth');
 Route::resource('pengeluaran', \App\Http\Controllers\PengeluaranController::class)->middleware('auth');
+Route::resource('categorypemasukan', \App\Http\Controllers\CategorypemasukanController::class)->middleware(['auth', 'isAdmin', 'isRoleBendahara']);
+Route::resource('categorypengeluaran', \App\Http\Controllers\CategorypengeluaranController::class)->middleware(['auth', 'isAdmin', 'isRoleBendahara']);
 
 Route::resource('jamaah', \App\Http\Controllers\JamaahController::class)->middleware('auth');
 Route::post('jamaah', [\App\Http\Controllers\JamaahController::class, 'filteryear'])->name('jamaah.filteryear')->middleware('auth');

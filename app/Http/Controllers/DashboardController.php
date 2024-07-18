@@ -180,7 +180,8 @@ class DashboardController extends Controller
         return view('transaksi', [
             'title' => 'Pemasukan',
             'bodyId' => '',
-            'action_store' => route('pemasukan.store')
+            'action_store' => route('pemasukan.store'),
+            'kategori_store' => route('categorypemasukan.store'),
         ]);
     }
 
@@ -188,7 +189,8 @@ class DashboardController extends Controller
         return view('transaksi', [
             'title' => 'Pengeluaran',
             'bodyId' => '',
-            'action_store' => route('pengeluaran.store')
+            'action_store' => route('pengeluaran.store'),
+            'kategori_store' => route('categorypengeluaran.store'),
         ]);
     }
 

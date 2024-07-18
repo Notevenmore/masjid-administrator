@@ -10,21 +10,21 @@ $("#cashPaymentForm").on("submit", function (event) {
             console.log(response.snapToken);
             window.snap.pay(response.snapToken, {
                 onSuccess: function (result) {
-                    window.location.href = urlafter;
+                    alert("Pembayaran Uang kas berhasil dilakukan!");
                 },
                 onPending: function (result) {
                     /* You may add your own implementation here */
                     alert("wating your payment!");
-                    console.log(result);
                 },
                 onError: function (result) {
                     /* You may add your own implementation here */
                     alert("payment failed!");
-                    console.log(result);
                 },
                 onClose: function () {
                     /* You may add your own implementation here */
-                    alert("you closed the popup without finishing the payment");
+                    alert(
+                        "Jika kamu keluar dari pop up pembayaran, maka pembayaran akan terdaftar batal dilakukan!"
+                    );
                 },
             });
         },
