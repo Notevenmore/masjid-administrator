@@ -10,7 +10,7 @@ use Laravel\Sanctum\HasApiTokens;
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
-    protected $fillable = ['name','email','password','admin_id','jamaah_id','master_id'];
+    protected $fillable = ['name','email','password','admin_id','jamaah_id','master_id', 'telp'];
     protected $hidden = ['password','remember_token'];
     protected $casts = ['email_verified_at' => 'datetime','password' => 'hashed'];
     protected $with = ['admin', 'jamaah', 'master'];
@@ -23,6 +23,9 @@ class User extends Authenticatable
     }
     public function master(){
         return $this->belongsTo(Master::class);
+    }
+    public function kas(){
+        return $this->hasMany(Kas::class);
     }
 
 }

@@ -20,6 +20,8 @@ Route::resource('masjid', \App\Http\Controllers\MasjidController::class)->middle
 Route::controller(\App\Http\Controllers\DashboardController::class)->name('dashboard.')->group(function(){
     Route::middleware(['auth','isAdmin'])->group(function () {
         Route::get('/dashboard', 'index')->name('index');
+        Route::post('/dashboard/cashPay', 'cashPayment')->name('cash-payment');
+        Route::get('/dashboard/paysuccess', 'afterPayment')->name('thanks');
         Route::middleware('isRoleBendahara')->group(function(){
             Route::get('/dashboard/pemasukan', 'pemasukan')->name('pemasukan');
             Route::get('/dashboard/pengeluaran', 'pengeluaran')->name('pengeluaran');

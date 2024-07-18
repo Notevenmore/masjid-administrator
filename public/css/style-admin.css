@@ -124,11 +124,15 @@
     font-weight: 600;
     line-height: 150%; /* 36px */
 }
-
 #report-info .report-content .perbandingan .heading {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+.pie-chart canvas {
+    width: 100% !important;
+    height: 100% !important;
 }
 
 #report-info .report-content .perbandingan .heading .input-part form {

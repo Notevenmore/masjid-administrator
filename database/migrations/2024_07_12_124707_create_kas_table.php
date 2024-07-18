@@ -11,16 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('kas', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(App\Models\Admin::class);
-            $table->foreignIdFor(App\Models\Master::class);
-            $table->foreignIdFor(App\Models\Jamaah::class);
+            $table->foreignIdFor(App\Models\User::class);
+            $table->foreignIdFor(App\Models\Masjid::class);
             $table->string('name');
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->string('telp');
-            $table->rememberToken();
+            $table->string('phone');
+            $table->string('address');
+            $table->string('status');
+            $table->integer('nominal');
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('kas');
     }
 };

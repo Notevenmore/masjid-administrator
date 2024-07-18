@@ -24,6 +24,14 @@
           <p class="login-failed">{{ $message }}</p>
         @enderror
       </div>
+      @if(!Request::routeIs('auth.login'))
+        <div class="form-group">
+          <input type="tel" id="email" name="telp" placeholder="Nomor Telpon" pattern="^(\+62|62|0)8[1-9][0-9]{6,9}$">
+          @error('telp')
+            <p class="login-failed">{{ $message }}</p>
+          @enderror
+        </div>
+      @endif
       @if(Request::routeIs('auth.register-jamaah'))
         <div class="form-group">
           <input type="text" id="name" name="name" placeholder="name">

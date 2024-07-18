@@ -33,6 +33,10 @@ class Masjid extends Model
         return $this->hasMany(Pengeluaran::class);
     }
 
+    public function kas(){
+        return $this->hasMany(Kas::class);
+    }
+
     public function laporankeuangan(){
         return $this->hasMany(Laporankeuangan::class);
     }

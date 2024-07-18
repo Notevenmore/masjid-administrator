@@ -13,6 +13,10 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.css" rel="stylesheet" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        @if(Request::routeIs('dashboard.index'))
+          <script type="text/javascript" src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="{{ config('midtrans.client_key') }}"></script>
+          <script src="{{ asset('js/jquery.js') }}"></script>
+        @endif
         @if(Request::routeIs(['dashboard.index', 'dashboard.pemasukan', 'dashboard.pengeluaran', 'dashboard.laporan', 'dashboard.asset_mesjid', 'dashboard.kegiatan','dashboard.kelola', 'pemasukan.edit', 'pengeluaran.edit', 'aset.edit', 'informasikegiatan.create', 'informasikegiatan.edit', 'master.index']))
           <link rel="stylesheet" href="{{ asset('css/style-admin.css') }}">
         @else

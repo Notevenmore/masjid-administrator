@@ -7,6 +7,7 @@ use Carbon\Carbon;
 use App\Http\Requests\StoreJamaahRequest;
 use App\Http\Requests\UpdateJamaahRequest;
 use App\Models\Informasikegiatan;
+use DateTime;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
@@ -17,62 +18,60 @@ class JamaahController extends Controller
      */
     public function index()
     {
-        $rekapitulasi = ["tanggal" => [], "total" => []];
-        $tanggalsebelum = null;
-        $total = 0;
-        foreach(Auth::user()->jamaah->masjid->laporankeuangan()->table()->get() as $rekap){
-            if($rekap->pemasukan != null){
-                if($rekap->pemasukan->tanggal != $tanggalsebelum){
-                    array_push($rekapitulasi["total"], $total);                    
-                    array_push($rekapitulasi["tanggal"], $rekap->pemasukan->tanggal);                    
-                }
-                $total += $rekap->pemasukan->jumlah;
-                $tanggalsebelum = $rekap->pemasukan->tanggal;
-            }elseif($rekap->pengeluaran != null){
-                if($rekap->pengeluaran->tanggal != $tanggalsebelum){
-                    array_push($rekapitulasi["total"], $total);                    
-                    array_push($rekapitulasi["tanggal"], $rekap->pengeluaran->tanggal);                    
-                }
-                $total -= $rekap->pengeluaran->jumlah;
-                $tanggalsebelum = $rekap->pengeluaran->tanggal;
-            }
-        }
         return view('index', [
             'title' => 'Homepage',
             'dates' => collect(range(Carbon::now()->year - max(0, (Carbon::now()->year - 2015)), Carbon::now()->year))->reverse(),
             'bodyId' => '',
-            'rekapitulasi' => $rekapitulasi,
+            'rekapitulasi' => $this->getRekapitulasiData(),
             'start' => null,
             'end' => null
         ]);
     }
 
-    public function filteryear(Request $request){
+    private function getRekapitulasiData() {
         $rekapitulasi = ["tanggal" => [], "total" => []];
         $tanggalsebelum = null;
         $total = 0;
-        foreach(Auth::user()->jamaah->masjid->laporankeuangan()->table()->filter($request->before, $request->after)->get() as $rekap){
+        // data tabel rekapitulasi
+        foreach(Auth::user()->jamaah->masjid->laporankeuangan()->table()->get() as $rekap){
             if($rekap->pemasukan != null){
+                $total += $rekap->pemasukan->jumlah;
                 if($rekap->pemasukan->tanggal != $tanggalsebelum){
                     array_push($rekapitulasi["total"], $total);                    
                     array_push($rekapitulasi["tanggal"], $rekap->pemasukan->tanggal);                    
                 }
-                $total += $rekap->pemasukan->jumlah;
                 $tanggalsebelum = $rekap->pemasukan->tanggal;
             }elseif($rekap->pengeluaran != null){
+                $total -= $rekap->pengeluaran->jumlah;
                 if($rekap->pengeluaran->tanggal != $tanggalsebelum){
                     array_push($rekapitulasi["total"], $total);                    
                     array_push($rekapitulasi["tanggal"], $rekap->pengeluaran->tanggal);                    
                 }
-                $total -= $rekap->pengeluaran->jumlah;
                 $tanggalsebelum = $rekap->pengeluaran->tanggal;
+            }
+        }
+
+        return $rekapitulasi;
+    }
+
+    public function filteryear(Request $request){
+        $rekapitulasi = $this->getRekapitulasiData();
+        $filteredRekapitulasi = [
+            'tanggal' => [],
+            'total' => [],
+        ];
+        foreach ($rekapitulasi['tanggal'] as $key => $date) {
+            $current = new DateTime($date);
+            if ($current >= new DateTime($request->before) && $current <= new DateTime($request->after)) {
+                array_push($filteredRekapitulasi['tanggal'], $date);
+                array_push($filteredRekapitulasi['total'], $rekapitulasi['total'][$key]);
             }
         }
         return view('index', [
             'title' => 'Homepage',
             'dates' => collect(range(Carbon::now()->year - max(0, (Carbon::now()->year - 2015)), Carbon::now()->year))->reverse(),
             'bodyId' => '',
-            'rekapitulasi' => $rekapitulasi,
+            'rekapitulasi' => $filteredRekapitulasi,
             'start' => $request->before,
             'end' => $request->after
         ]);

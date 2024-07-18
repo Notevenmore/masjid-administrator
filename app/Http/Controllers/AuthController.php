@@ -59,7 +59,8 @@ class AuthController extends Controller
             'name' => 'required|max:50',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|min:10',
-            'masjid' => 'required'
+            'masjid' => 'required',
+            'telp' => 'required',
         ]);
         $admin = Admin::create([
             'status' => false
@@ -77,7 +78,8 @@ class AuthController extends Controller
             'master_id' => $master->id,
             'email' => $request->email,
             'password' => bcrypt($request->password),
-            'name' => $request->name
+            'name' => $request->name,
+            'telp' => $request->telp,
         ]);
         return redirect()->route('auth.login')->with('success', 'Registrasi berhasil dilakukan! Akun anda telah terdaftar sebagai jamaah');
     }
@@ -122,7 +124,8 @@ class AuthController extends Controller
             'master_id' => $master->id,
             'email' => $request->email,
             'password' => bcrypt($request->password),
-            'name' => $request->adminname
+            'name' => $request->adminname,
+            'telp' => $request->telp,
         ]);
         return redirect()->route('auth.login')->with('success', 'Registrasi berhasil dilakukan! Akun anda telah terdaftar sebagai admin');
     }

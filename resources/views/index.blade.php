@@ -48,8 +48,7 @@
                   </div>
               </div>
               <div class="graph">
-                  <canvas id="bar-pemasukkan">
-                  </canvas>
+                  <canvas id="bar-rekapitulasi"></canvas>
               </div>
           </div>
       </div>
@@ -78,24 +77,9 @@
   </div>
   @auth
     <script>
-      var dataPemasukan = {
-            labels: [
-              @foreach($rekapitulasi['tanggal'] as $rekap)
-                '{{ $rekap }}',
-              @endforeach
-            ],
-            datasets: [{
-              label: "Pemasukkan Harian",
-              data: [
-                @foreach($rekapitulasi['total'] as $rekap)
-                  {{ $rekap }},
-                @endforeach
-              ],
-              backgroundColor: [
-                '#05934A'
-              ]
-            }]
-          };
+      var pemasukan = [];
+      var pengeluaran = [];
+      var rekapitulasi = @json($rekapitulasi);
     </script>
     <div id="more-info">
       <center>
