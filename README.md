@@ -1,4 +1,4 @@
-![Screenshot from 2024-10-27 15-55-40](https://github.com/user-attachments/assets/d5e85dd7-a1a8-4a23-8d96-8fac07975eed)# Website Masjid Administrator
+# Website Masjid Administrator
 
 Website Masjid Administrator adalah platform yang dirancang untuk mempermudah manajemen masjid, termasuk manajemen keuangan, kegiatan, dan pengurus. Dengan fitur-fitur canggih dan mudah digunakan, aplikasi ini bertujuan untuk meningkatkan transparansi dan efisiensi dalam pengelolaan masjid.
 
@@ -9,6 +9,8 @@ Website Masjid Administrator adalah platform yang dirancang untuk mempermudah ma
   <img src="https://github.com/user-attachments/assets/391b8d37-5585-445d-9225-dc9744d0e192" align="center" />
 
 - **Registrasi Jamaah**: Jamaah dapat mendaftar untuk berpartisipasi dan mengikuti kegiatan masjid.
+  <img src="https://github.com/user-attachments/assets/438f9392-ef4c-4c07-beaf-013219b31b44" />
+
 - **Login**: Semua pengguna (admin, jamaah) dapat masuk ke sistem dengan aman.
   <img src="https://github.com/user-attachments/assets/1ebc53f6-7b70-413e-906a-68e94478a185" align="center" />
 
@@ -118,13 +120,59 @@ Website Masjid Administrator adalah platform yang dirancang untuk mempermudah ma
        </tr>
     </table>
 - **Penambahan Kegiatan**: Pengurus admin dapat menambahkan kegiatan yang akan diadakan di masjid.
+  <table align="center" style="border: none;">
+       <tr>
+        <td align="center">
+            <img src="https://github.com/user-attachments/assets/da8c9eb9-98b9-4504-9003-285eced49042" />
+          <br>
+          Form Penambahan Kegiatan Mesjid oleh Pengurus Mesjid
+        </td>
+       </tr>
+    </table>
 - **Kelola Pengurus**: Mengelola pengurus dengan kemampuan untuk menjadikan jamaah sebagai admin, mengubah admin menjadi jamaah, atau menghapus akun jamaah.
+  <table align="center" style="border: none;">
+       <tr>
+        <td align="center">
+            <img src="https://github.com/user-attachments/assets/d6ff41fe-2947-4935-98c3-ce6a0dc4252b" />
+          <br>
+          Form Penambahan Kegiatan Mesjid oleh Pengurus Mesjid
+        </td>
+       </tr>
+    </table>
 
 ### 5. Monitoring untuk Jamaah
 - Jamaah dapat memantau laporan keuangan masjid dan melihat kegiatan yang akan diadakan.
+  <table align="center" style="border: none;">
+       <tr>
+        <td align="center">
+            <img src="https://github.com/user-attachments/assets/2be61eea-9f17-43ff-a2b2-f31719856273" />
+          <br>
+          Tampilan Grafik Keuangan Mesjid
+        </td>
+        <td align="center">
+            <img src="https://github.com/user-attachments/assets/eaf2add9-beb5-42f5-8912-1f401eb08471" />
+          <br>
+          Laporan Keuangan Mesjid secara rinci
+        </td>
+       </tr>
+       <tr>
+        <td align="center">
+            <img src="https://github.com/user-attachments/assets/0eae8a95-4911-42ac-b5e1-b922fb9cc57f" />
+          <br>
+          Tampilan list kegiatan Mesjid yang telah didaftar
+        </td>
+        <td align="center">
+            <img src="https://github.com/user-attachments/assets/702dbcf0-7b3d-4e0d-8ed0-c173c6bcac08" />
+          <br>
+          Detail kegiatan mesjid 
+        </td>
+       </tr>
+    </table>
 
 ### 6. Pengelolaan Akun Pengguna
 - Master Admin dapat mengelola akun pengguna untuk Masjid Administrator.
+  <img src="https://github.com/user-attachments/assets/6c682779-76f1-4841-a68f-3897a68d2f03" />
+
 - Admin dapat mengelola akun pengguna atau jamaah dari Masjid yang terdaftar pada Masjid Administrator
   <img src="https://github.com/user-attachments/assets/53a2178d-bf0f-465d-823f-46c246d57ee6" />
 
