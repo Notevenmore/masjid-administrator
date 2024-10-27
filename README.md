@@ -1,66 +1,74 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Website Masjid Administrator
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Website Masjid Administrator adalah platform yang dirancang untuk mempermudah manajemen masjid, termasuk manajemen keuangan, kegiatan, dan pengurus. Dengan fitur-fitur canggih dan mudah digunakan, aplikasi ini bertujuan untuk meningkatkan transparansi dan efisiensi dalam pengelolaan masjid.
 
-## About Laravel
+## Fitur Utama
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### 1. Autentikasi
+- **Registrasi Admin**: Admin dapat mendaftar untuk mengelola masjid, termasuk pengurus dan bendahara.
+  <img src="https://github.com/user-attachments/assets/391b8d37-5585-445d-9225-dc9744d0e192" align="center" />
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- **Registrasi Jamaah**: Jamaah dapat mendaftar untuk berpartisipasi dan mengikuti kegiatan masjid.
+- **Login**: Semua pengguna (admin, jamaah) dapat masuk ke sistem dengan aman.
+  <img src="https://github.com/user-attachments/assets/1ebc53f6-7b70-413e-906a-68e94478a185" align="center" />
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
+### 2. Otorisasi
+- **Jamaah**: Mengakses laporan keuangan dan melihat kegiatan masjid.
+- **Admin**: Terdapat beberapa jenis admin:
+  - Ketua
+  - Bendahara
+  - Admin Aset
+  - Admin Umum
+- **Master Admin**: Mengelola semua akun pengguna dan hak akses.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### 3. Manajemen Keuangan
+- **Pembayaran Uang Kas**: Admin dapat melakukan pembayaran uang kas melalui QRIS (Midtrans) atau secara langsung kepada bendahara.
+     <table align="center" style="border: none;">
+       <tr>
+        <td align="center">
+          <img src="https://github.com/user-attachments/assets/54654b67-9988-4429-82b7-04a3dc46ec7a" />
+          <br>
+          Input nominal pembayaran uang kas
+        </td>
+       </tr>
+       <tr>
+        <td align="center">
+            <img src="https://github.com/user-attachments/assets/b83192e5-adf3-43eb-9530-a91924eaefd8" />
+          <br>
+          Scan Barcode QRIS Untuk pembayaran uang kas
+        </td>
+       </tr>
+        <td align="center">
+            <img src="https://github.com/user-attachments/assets/0a9b19dc-78b1-40b4-9fe3-c04d0613c73c" />
+          <br>
+          Notifikasi pembayaran berhasil
+        </td>
+       </tr>
+    </table>
+- **Pendataan oleh Bendahara**: Bendahara bertanggung jawab untuk mencatat semua transaksi keuangan.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### 4. Dashboard Masjid
+- **Manajemen Keuangan**: Memantau aliran dana masuk dan keluar secara real-time.
+- **Penambahan Pemasukan dan Kategori**: Bendahara dapat menambahkan sumber pemasukan baru beserta kategori.
+- **Penambahan Pengeluaran dan Kategori**: Bendahara juga dapat menambahkan pengeluaran dan kategorinya.
+- **Penambahan Aset dan Status**: Admin Aset dapat menambah dan mengelola aset masjid.
+- **Penambahan Kegiatan**: Pengurus admin dapat menambahkan kegiatan yang akan diadakan di masjid.
+- **Kelola Pengurus**: Mengelola pengurus dengan kemampuan untuk menjadikan jamaah sebagai admin, mengubah admin menjadi jamaah, atau menghapus akun jamaah.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 5. Monitoring untuk Jamaah
+- Jamaah dapat memantau laporan keuangan masjid dan melihat kegiatan yang akan diadakan.
 
-## Laravel Sponsors
+### 6. Pengelolaan Akun Pengguna
+- Master Admin dapat mengelola akun pengguna untuk Masjid Administrator.
+- Admin dapat mengelola akun pengguna atau jamaah dari Masjid yang terdaftar pada Masjid Administrator
+  <img src="https://github.com/user-attachments/assets/53a2178d-bf0f-465d-823f-46c246d57ee6" />
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
 
-### Premium Partners
+## Teknologi yang Digunakan
+- **Framework**: Laravel
+- **Pembayaran**: Midtrans untuk integrasi QRIS
+- **Frontend**: Blade Component
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Tujuan Proyek
+Proyek ini bertujuan untuk menciptakan sistem yang efisien dan transparan dalam pengelolaan masjid, memfasilitasi interaksi antara pengurus dan jamaah, serta meningkatkan akuntabilitas dalam pengelolaan keuangan masjid.
