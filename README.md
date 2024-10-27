@@ -1,4 +1,4 @@
-# Website Masjid Administrator
+![Screenshot from 2024-10-27 15-55-40](https://github.com/user-attachments/assets/d5e85dd7-a1a8-4a23-8d96-8fac07975eed)# Website Masjid Administrator
 
 Website Masjid Administrator adalah platform yang dirancang untuk mempermudah manajemen masjid, termasuk manajemen keuangan, kegiatan, dan pengurus. Dengan fitur-fitur canggih dan mudah digunakan, aplikasi ini bertujuan untuk meningkatkan transparansi dan efisiensi dalam pengelolaan masjid.
 
@@ -50,9 +50,73 @@ Website Masjid Administrator adalah platform yang dirancang untuk mempermudah ma
 
 ### 4. Dashboard Masjid
 - **Manajemen Keuangan**: Memantau aliran dana masuk dan keluar secara real-time.
+  <table align="center" style="border: none;">
+       <tr>
+        <td align="center">
+          <img src="https://github.com/user-attachments/assets/4b57ba0d-b567-4f95-b2a3-02ccf547a92d" />
+          <br>
+          Pemasukan Mesjid
+        </td>
+       </tr>
+       <tr>
+        <td align="center">
+            <img src="https://github.com/user-attachments/assets/fb2d0f81-86fa-40ca-929b-ee2b348bbbbb" />
+          <br>
+          Pengeluaran Mesjid
+        </td>
+       </tr>
+      <tr>
+        <td align="center">
+            <img src="https://github.com/user-attachments/assets/ef213bbd-0768-48b4-9442-9724ddec4f88" />
+          <br>
+          Laporan Keuangan mesjid
+        </td>
+       </tr>
+    </table>
 - **Penambahan Pemasukan dan Kategori**: Bendahara dapat menambahkan sumber pemasukan baru beserta kategori.
+  <table align="center" style="border: none;">
+       <tr>
+        <td align="center">
+          <img src="https://github.com/user-attachments/assets/c830e503-3187-4997-a3ca-cd1b84e24fe2" />
+          <br>
+          Form Penambahan Kategori Pemasukan mesjid
+        </td>
+       </tr>
+       <tr>
+        <td align="center">
+            <img src="https://github.com/user-attachments/assets/233aca8a-7e9f-427c-9826-9c357d6c5c4e" />
+          <br>
+          Form Penambahan Pemasukan Mesjid
+        </td>
+       </tr>
+    </table>
 - **Penambahan Pengeluaran dan Kategori**: Bendahara juga dapat menambahkan pengeluaran dan kategorinya.
+  <table align="center" style="border: none;">
+       <tr>
+        <td align="center">
+          <img src="https://github.com/user-attachments/assets/ddc89f2d-4abd-4416-bc4f-456f0b0729d3" />
+          <br>
+          Form Penambahan Kategori Pengeluaran mesjid
+        </td>
+       </tr>
+       <tr>
+        <td align="center">
+            <img src="https://github.com/user-attachments/assets/31b8062b-4cbe-45d4-b62e-8ef8ff4d9e72" />
+          <br>
+          Form Penambahan Pengeluaran Mesjid
+        </td>
+       </tr>
+    </table>
 - **Penambahan Aset dan Status**: Admin Aset dapat menambah dan mengelola aset masjid.
+  <table align="center" style="border: none;">
+       <tr>
+        <td align="center">
+          <img src="https://github.com/user-attachments/assets/1876d20c-f616-4308-b6af-36742570da6b" />
+          <br>
+          Tabel Aset aset mesjid yang telah terdata beserta status
+        </td>
+       </tr>
+    </table>
 - **Penambahan Kegiatan**: Pengurus admin dapat menambahkan kegiatan yang akan diadakan di masjid.
 - **Kelola Pengurus**: Mengelola pengurus dengan kemampuan untuk menjadikan jamaah sebagai admin, mengubah admin menjadi jamaah, atau menghapus akun jamaah.
 
